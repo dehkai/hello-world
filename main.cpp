@@ -1,26 +1,30 @@
 #include <iostream>
-#include <string>
+#include <iomanip>
 using namespace std;
-
-int main() {
-
-
- int Mark[3][4];
- int sum=0;
-
-
-  for (int x=0;x<3;x++){
-        cout<<"Enter the Mark (Ex: 1 54 231 3) :";
-        for(int j=0;j<4;j++){
-            cin>>Mark[x][j];
-            sum = sum + Mark[x][j];
-    }
+double maxi(double arra[ ], int siz);
+int main()
+{
+    double arra[100];
+    int i,siz = 8;
+    cout<<endl<<maxi(arra,siz);
+    return 0;
 }
- for (int x=0;x<3;x++){
-    for(int j=0;j<4;j++){
-	cout<<endl<<"List Mark are :" <<Mark[x][j];
+/////////////////////////////////////////////////
+double maxi(double arra[ ], int siz)
+{
+    int i;
+    for(i = 0; i < siz; ++i)
+    {
+       cout << "Enter Number " << i + 1 << " : ";
+       cin >> arra[i];
     }
-}
-cout<<endl<<endl<<"Total Mark = "<<sum;
-  return 0;
+    // Loop to store largest number to arr[0]
+    for(i = 1;i < siz; ++i)
+    {
+       // Change < to > if you want to find the smallest element
+       if(arra[0] < arra[i])
+           arra[0] = arra[i];
+    }
+    cout << "Largest element = ";
+    return arra[0];
 }
